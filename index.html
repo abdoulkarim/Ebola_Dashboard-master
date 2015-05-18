@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Ebola Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/site.css"/>
+        <script src="js/jquery.js"></script>
+        <script src="js/d3.js" charset="utf-8"></script>
+        <script src="js/crossfilter.v1.min.js" charset="utf-8"></script> 
+        <script src="data/CasesAndDeaths.js"></script>
+        <script src="data/KeyStats.js"></script>
+        <script src="data/regions.js"></script>
+        <script src="data/westafrica.js"></script>
+        <script src="data/medical_centres.js"></script>
+        <script src="data/data.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46399763-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>         
+    </head>
+    <body>
+        <div class="container dashboard">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Ebola Dashboard</h2>
+                </div>
+                <div class="col-md-8 spacersm">
+                        <p>For feedback email <a href="mailto:sjohnson@redcross.org.uk">sjohnson@redcross.org.uk</a></p>
+                        <p>Last Update: <span id="update_date"></span>.  These figures include confirmed and suspected cases.</p>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-md-7">
+                    <h4 class="filtertable">New Confirmed Cases in the last two weeks (Click bars to filter)</h4><div id="barchartfilter" class="filterbox"></div>
+                    <div id="bar_chart"></div>
+                </div>
+                <div class="col-md-5">
+                    <h4 id="key_stats_title">Key Stats for Guinea, Liberia and Sierra Leone</h4>
+                    <div id="key_stats"></div>
+                </div>               
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <h4>Map - New Confirmed Cases in the last two weeks (Mouse over a region for case data)</h4>
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-5">
+                    <h4 id="cul_tot_title">Cumulative Totals for Guinea, Liberia and Sierra Leone</h4>
+                    <div id="line_total"></div>
+                </div>                 
+            </div>
+        </div>
+        <script src="js/site.js"></script>        
+    </body>
+</html>
